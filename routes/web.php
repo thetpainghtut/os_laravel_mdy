@@ -12,11 +12,37 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Frontend ------------------------------
+Route::get('/','FrontendController@home')->name('homepage');
 
-Route::get('/', 'BackendController@dashboard')->name('dashboard');
+Route::get('filter_item','FrontendController@filter_item')->name('filter_item');
 
-Route::resource('items','ItemController'); 
-// 7  (get- 4 / post-1 / put-1 / delete-1)
+Route::get('itemdetail/{id}','FrontendController@itemdetail')->name('itemdetail');
 
-Route::resource('brands','BrandController');
+Route::get('login','FrontendController@login')->name('loginpage');
 
+Route::get('register','FrontendController@register')->name('registerpage');
+
+Route::get('checkout','FrontendController@checkout')->name('checkout');
+
+Route::get('profile','FrontendController@profile')->name('profile');
+
+// Backend-------------------------------
+Route::middleware('auth')->group(function () {
+
+  Route::resource('orders','OrderController');
+
+  Route::get('dashboard', 'BackendController@dashboard')->name('dashboard');
+
+  Route::resource('items','ItemController'); 
+  // 7  (get- 4 / post-1 / put-1 / delete-1)
+
+  Route::resource('brands','BrandController');
+
+  // category, subcategory
+});
+// -----End Backend---------------------------
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

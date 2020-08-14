@@ -16,6 +16,8 @@
             <tr><td>Product Code:<td>{{$item->codeno}}</td></tr>
             <tr><td>Product Price:<td>{{$item->price}} MMK</td></tr>
             <tr><td>Description:<td>{{$item->description}}</td></tr>
+            <tr><td>Brand:<td>{{$item->brand->name}}</td></tr>
+            <tr><td>Subcategory:<td>{{$item->subcategory->name}}</td></tr>
           </tbody>
         </table>
         {{-- <p class='text-center'><a class='btn btn-primary px-2 add_to_cart hvr-icon-buzz-out' href='#' role='button' data-id='$id' data-name='$product_name' data-price='$product_price' data-photo='$product_photo'>Add to Cart  <i class='fa fa-shopping-cart hvr-icon' aria-hidden='true'></i></a></p> --}}
