@@ -38,10 +38,9 @@ Route::middleware('role:admin')->group(function () {
   Route::resource('brands','BrandController');
 
   // category, subcategory
-
-  Route::resource('orders','OrderController');
 });
 // -----End Backend---------------------------
+Route::resource('orders','OrderController');
 
 Auth::routes();
 
