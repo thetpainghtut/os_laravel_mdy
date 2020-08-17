@@ -23,11 +23,11 @@
     <a href="{{route('homepage')}}" class="btn btn-success">Continue Shopping</a>
 
     <textarea class="notes" placeholder="Your Note Here!"></textarea>
-    @auth
+    @role('customer')
       <a href="#" class="btn btn-info float-right buy_now">Checkout</a>
     @else
       <a href="{{route('login')}}" class="btn btn-info float-right">Login To Checkout</a>
-    @endauth
+    @endrole
   </div>
 @endsection
 

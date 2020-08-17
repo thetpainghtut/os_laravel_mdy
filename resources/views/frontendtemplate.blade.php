@@ -62,6 +62,10 @@
                   </a>
 
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{ route('profile') }}">
+                          Profile
+                      </a>
+
                       <a class="dropdown-item" href="{{ route('logout') }}"
                          onclick="event.preventDefault();
                                        document.getElementById('logout-form').submit();">
@@ -71,6 +75,7 @@
                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                           @csrf
                       </form>
+
                   </div>
               </li>
           @endguest
@@ -82,18 +87,8 @@
   <!-- Page Content -->
   <div class="container">
 
-    <div class="row">
-
-      <div class="col-lg-3">
-
-        <h1 class="my-4">Shop Name</h1>
-        <div class="list-group">
-          <a href="{{route('filter_item')}}" class="list-group-item">Category 1</a>
-          <a href="#" class="list-group-item">Category 2</a>
-          <a href="#" class="list-group-item">Category 3</a>
-        </div>
-
-      </div>
+    <div class="row my-3">
+      @yield('sidebar')
       <!-- /.col-lg-3 -->
 
       @yield('content')
