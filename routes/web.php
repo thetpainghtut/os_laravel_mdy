@@ -30,8 +30,6 @@ Route::get('profile','FrontendController@profile')->name('profile');
 // Backend-------------------------------
 Route::middleware('role:admin')->group(function () {
 
-  Route::resource('orders','OrderController');
-
   Route::get('dashboard', 'BackendController@dashboard')->name('dashboard');
 
   Route::resource('items','ItemController'); 
@@ -40,6 +38,8 @@ Route::middleware('role:admin')->group(function () {
   Route::resource('brands','BrandController');
 
   // category, subcategory
+
+  Route::resource('orders','OrderController');
 });
 // -----End Backend---------------------------
 
