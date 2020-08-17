@@ -20,7 +20,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::all();
+        return view('backend.orders.index',compact('orders'));
     }
 
     /**
@@ -73,7 +74,8 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = Order::find($id);
+        return view('backend.orders.show',compact('order'));
     }
 
     /**
@@ -107,6 +109,8 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $order = Order::find($id);
+        $order->delete();
+        return redirect()->route('orders.index');
     }
 }
