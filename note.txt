@@ -34,6 +34,31 @@ Items Manage
 
 
 
+// Deployment Laravel Project
+
+- create subdomain
+- enter into subdomain using SSH
+  ssh -p 7822 username@domain.me
+- git clone url
+- enter into folder (cd )
+- cp .env.example .env
+- composer install
+- php artisan key:generate
+
+
+- In Cpanel,
+  - create a database and user
+  - Add User To Database
+
+- edit (DB)config in .env file
+- add htaccess file
+- SSH Terminal
+  - php artisan migrate
+  - php artisan db:seed
+  - 
+
+
+
 
 
 
